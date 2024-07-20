@@ -18,6 +18,7 @@ const Main = () => {
       queryKey: ['artwork'],
       queryFn: getArtworkList,
       initialPageParam: 1,
+      //TODO: chequear que no pushees a una pagina que no existe
       getNextPageParam: lastPage => lastPage.pagination.current_page + 1,
     });
 
