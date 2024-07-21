@@ -18,6 +18,7 @@ export const serializeArtworks = (data: ApiResponse): ArtworkList => {
       //https://api.artic.edu/docs/#image-sizes
       image_high_res: `${data.config.iiif_url}/${item.image_id}/full/843,/0/default.jpg`,
       image_mid_res: `${data.config.iiif_url}/${item.image_id}/full/400,/0/default.jpg`,
+      date_display: item.date_display,
     })),
   };
 };

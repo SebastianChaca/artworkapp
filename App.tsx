@@ -16,7 +16,7 @@ function App(): React.JSX.Element {
     <NavigationContainer>
       <QueryClientProvider client={queryClient}>
         <SafeAreaProvider>
-          <SafeAreaView style={{backgroundColor: 'black', height: '100%'}}>
+          <SafeAreaView style={{height: '100%'}}>
             <Main />
           </SafeAreaView>
         </SafeAreaProvider>

@@ -12,6 +12,7 @@ export interface Artwork {
   iiif_url: string;
   image_high_res: string;
   image_mid_res: string;
+  date_display: string;
 }
 
 export interface ArtworkList {

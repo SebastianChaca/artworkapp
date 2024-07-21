@@ -28,10 +28,9 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   imageContainer: {
-    marginTop: 8,
     marginBottom: 8,
     position: 'relative',
-    width: 300,
-    height: 300,
+    width: 130,
+    height: 130,
   },
 });

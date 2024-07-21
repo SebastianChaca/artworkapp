@@ -1,5 +1,4 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
 import {Artwork} from '../../api/types/ui';
 import {ArtworkCardProvider} from './context/ArtworkCardProvider';
 import {CardContainer} from './Components/CardContainer';
@@ -9,8 +8,8 @@ import {
   CardImage,
   CardTitle,
 } from './Components';
-import {HomeProps} from '../../Main';
-type NavigationProp = HomeProps['navigation'];
+import {View} from 'react-native';
+
 export const ArtworkCard = ({
   artwork,
   index,
@@ -18,15 +17,15 @@ export const ArtworkCard = ({
   artwork: Artwork;
   index: number;
 }) => {
-  const navigation = useNavigation<NavigationProp>();
   return (
     <ArtworkCardProvider artwork={artwork}>
       <CardAnimation index={index}>
-        <CardContainer
-          onPress={() => navigation.navigate('Details', {artId: artwork.id})}>
-          <CardTitle />
+        <CardContainer>
           <CardImage />
-          <CardDescription />
+          <View style={{marginLeft: 10, flexShrink: 1}}>
+            <CardTitle />
+            <CardDescription />
+          </View>
         </CardContainer>
       </CardAnimation>
     </ArtworkCardProvider>
