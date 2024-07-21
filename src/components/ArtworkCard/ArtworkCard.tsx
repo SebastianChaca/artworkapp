@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
 import {Artwork} from '../../api/types/ui';
 import {ArtworkCardProvider} from './context/ArtworkCardProvider';
+import {CardContainer} from './Components/CardContainer';
 import {
   CardAnimation,
   CardDescription,
@@ -19,17 +19,12 @@ export const ArtworkCard = ({
   return (
     <ArtworkCardProvider artwork={artwork}>
       <CardAnimation index={index}>
-        <View style={styles.container}>
+        <CardContainer>
           <CardTitle />
           <CardImage />
           <CardDescription />
-        </View>
+        </CardContainer>
       </CardAnimation>
     </ArtworkCardProvider>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    margin: 10,
-  },
-});

@@ -4,7 +4,6 @@ import {ApiResponse} from '../../types/apiResonse';
 import {serializeArtworks} from '../../serializers/artworksSerializer';
 import {ArtworkList} from '../../types/ui';
 
-//TODO:agregar Promise<ArtworkList>, se rompe el catch
 export const getArtworkList = async ({pageParam = 1}): Promise<ArtworkList> => {
   try {
     const response: AxiosResponse = await artworksBase.get('/artworks', {
