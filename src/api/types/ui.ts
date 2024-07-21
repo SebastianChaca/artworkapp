@@ -3,7 +3,7 @@ import {Thumbnail, Pagination, Config} from './apiResonse';
 export interface Artwork {
   id: number;
   title: string;
-  description: string;
+  description: string | null;
   short_description: string;
   dimensions: string;
   thumbnail: Thumbnail;
@@ -13,6 +13,8 @@ export interface Artwork {
   image_high_res: string;
   image_mid_res: string;
   date_display: string;
+  place_of_origin: string;
+  medium_display: string;
 }
 
 export interface ArtworkList {

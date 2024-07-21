@@ -13,7 +13,7 @@ export const CardContainer = ({children}: PropsWithChildren) => {
       onPress={() =>
         navigation.navigate('Details', {
           artwork,
-          title: artwork.title,
+          title: `${artwork.title} (${artwork.date_display})`,
         })
       }>
       <View style={styles.container}>{children}</View>
