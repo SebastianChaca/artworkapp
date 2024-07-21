@@ -1,9 +1,19 @@
 import React, {PropsWithChildren} from 'react';
 
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
+interface CardContainerProps {
+  onPress: () => void;
+}
 
-export const CardContainer = ({children}: PropsWithChildren) => {
-  return <View style={styles.container}>{children}</View>;
+export const CardContainer = ({
+  children,
+  onPress,
+}: PropsWithChildren<CardContainerProps>) => {
+  return (
+    <Pressable onPress={onPress}>
+      <View style={styles.container}>{children}</View>
+    </Pressable>
+  );
 };
 const styles = StyleSheet.create({
   container: {
