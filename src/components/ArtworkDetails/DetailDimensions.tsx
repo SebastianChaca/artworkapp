@@ -9,5 +9,7 @@ export const DetailDimensions = () => {
 const styles = StyleSheet.create({
   dimension: {
     fontSize: 10,
+    width: '70%',
+    textAlign: 'center',
   },
 });
