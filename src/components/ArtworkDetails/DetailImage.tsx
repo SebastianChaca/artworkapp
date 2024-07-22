@@ -1,21 +1,21 @@
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useArtworkDetailContext} from './context/ArtworDetailProvider';
+import {ArtImage} from '../Layout/Image/ArtImage';
 
 export const DetailImage = () => {
   const {artwork} = useArtworkDetailContext();
+
   return (
     <View style={styles.imageContainer}>
-      <ImageBackground
-        source={{uri: artwork.thumbnail.lqip}}
-        style={styles.image}>
-        <Image
-          source={{
-            uri: artwork.image_high_res,
-          }}
-          style={styles.image}
-        />
-      </ImageBackground>
+      <ArtImage
+        thumbnail={artwork.thumbnail?.lqip}
+        image={artwork?.image_high_res}
+        styles={{
+          imagebackground: styles.image,
+          image: styles.image,
+        }}
+      />
     </View>
   );
 };

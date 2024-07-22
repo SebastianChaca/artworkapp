@@ -1,21 +1,20 @@
 import React from 'react';
-import {Image, View, ImageBackground, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {useArtworkCardContext} from '../context/ArtworkCardProvider';
+import {ArtImage} from '../../Layout/Image/ArtImage';
 
 export const CardImage = () => {
   const {artwork} = useArtworkCardContext();
   return (
     <View style={styles.imageContainer}>
-      <ImageBackground
-        source={{uri: artwork.thumbnail.lqip}}
-        style={styles.image}>
-        <Image
-          source={{
-            uri: artwork.image_mid_res,
-          }}
-          style={styles.image}
-        />
-      </ImageBackground>
+      <ArtImage
+        thumbnail={artwork.thumbnail?.lqip}
+        image={artwork?.image_high_res}
+        styles={{
+          imagebackground: styles.image,
+          image: styles.image,
+        }}
+      />
     </View>
   );
 };

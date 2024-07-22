@@ -8,13 +8,14 @@ type RootStackParamList = {
   Home: undefined;
   Details: {artwork: Artwork; title: string};
 };
+//TODO:mover esto
 export type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 export type HomeRouteProps = HomeProps['route'];
 export type HomeNavigationProps = HomeProps['navigation'];
-
 export type DetailProps = NativeStackScreenProps<RootStackParamList, 'Details'>;
 export type DetailRouteProps = DetailProps['route'];
 export type DetailNavigationProps = DetailProps['navigation'];
+
 const Main = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
