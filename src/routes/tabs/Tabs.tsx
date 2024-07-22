@@ -2,11 +2,10 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {RootStackParamList} from '../types/routeTypes';
 import {Artworklist, Favorites} from '../../screens';
-import {FavoriteIcon} from '../../components/Layout/Icons/Favorite/FavoriteIcon';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 function Favorite() {
-  return <FavoriteIcon name="heart" size={15} />;
+  return <Icon name="heart" size={15} />;
 }
 
 function Home() {
