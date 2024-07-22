@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {DetailRouteProps} from '../../Main';
+
 import {useRoute} from '@react-navigation/native';
 import {ArtworkDetailProvider} from '../../components/ArtworkDetails/context/ArtworDetailProvider';
 import {
@@ -9,6 +9,7 @@ import {
   DetailsDescription,
   DetailsSummary,
 } from '../../components/ArtworkDetails';
+import {DetailRouteProps} from '../../routes/types/routeTypes';
 
 export const ArtworkDetail = () => {
   const {params} = useRoute<DetailRouteProps>();

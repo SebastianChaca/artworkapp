@@ -2,8 +2,9 @@ import {useNavigation} from '@react-navigation/native';
 import React, {PropsWithChildren} from 'react';
 
 import {Pressable, StyleSheet, View} from 'react-native';
-import {HomeNavigationProps} from '../../../Main';
+
 import {useArtworkCardContext} from '../context/ArtworkCardProvider';
+import {HomeNavigationProps} from '../../../routes/types/routeTypes';
 
 export const CardContainer = ({children}: PropsWithChildren) => {
   const navigation = useNavigation<HomeNavigationProps>();

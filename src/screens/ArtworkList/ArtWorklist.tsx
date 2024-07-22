@@ -1,7 +1,6 @@
 import React from 'react';
 import {RefreshControl, FlatList} from 'react-native';
-import {useInfiniteQuery} from '@tanstack/react-query';
-import {getArtworkList} from '../../api/services/Artwork/getArtwork';
+
 import {ArtworkCard} from '../../components';
 import {
   ErrorView,
@@ -9,10 +8,10 @@ import {
   LoadingView,
   NotFound,
 } from '../../components/Layout/status';
-import {HomeProps} from '../../Main';
+
 import {useInifiniteListQuery} from '../../hooks/useInifiniteListQuery';
 
-export const Artworklist = ({navigation}: HomeProps) => {
+export const Artworklist = () => {
   const {data, error, isLoading, refetch, fetchNextPage, isFetchingNextPage} =
     useInifiniteListQuery();
 
@@ -27,6 +26,7 @@ export const Artworklist = ({navigation}: HomeProps) => {
   if (data?.pages && data?.pages.length > 0) {
     return (
       <FlatList
+        keyExtractor={item => item.id.toString()}
         data={data.pages.map(i => i.artwork).flat()}
         renderItem={({item, index}) => (
           <ArtworkCard artwork={item} index={index} />
