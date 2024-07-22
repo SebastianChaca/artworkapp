@@ -11,7 +11,7 @@ export const CardAnimation = ({
     Animated.timing(opacity, {
       toValue: 1,
       duration: 1000,
-      delay: 450 * (index % 3) + 1,
+      delay: 450 * (index % 5) + 1,
       useNativeDriver: true,
     }).start();
   }, [opacity, index]);

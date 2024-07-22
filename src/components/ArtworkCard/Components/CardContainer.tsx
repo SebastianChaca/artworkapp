@@ -23,9 +23,9 @@ export const CardContainer = ({children}: PropsWithChildren) => {
 };
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
+    marginHorizontal: 12,
     marginVertical: 7,
-    padding: 10,
+    padding: 14,
     borderRadius: 10,
     backgroundColor: '#c8c8c8',
     display: 'flex',

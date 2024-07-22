@@ -4,10 +4,11 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
   Home: undefined;
+  HomeTab: undefined;
   Details: {artwork: Artwork; title: string};
   Favorites: undefined;
 };
-//TODO:mover esto
+
 export type HomeProps = BottomTabScreenProps<RootStackParamList, 'Home'>;
 export type HomeRouteProps = HomeProps['route'];
 export type HomeNavigationProps = HomeProps['navigation'];

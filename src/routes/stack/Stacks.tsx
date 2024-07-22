@@ -11,7 +11,7 @@ export const Stacks = () => {
       <Stack.Screen
         name="Home"
         component={Tabs}
-        options={{title: 'Art Institute of Chicago'}}
+        options={{headerShown: false}}
       />
       <Stack.Screen
         name="Details"

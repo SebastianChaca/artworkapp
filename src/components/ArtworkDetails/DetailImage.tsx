@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useArtworkDetailContext} from './context/ArtworDetailProvider';
 import {ArtImage} from '../Layout/Image/ArtImage';
 
-export const DetailImage = () => {
+export const DetailImage = ({children}: PropsWithChildren) => {
   const {artwork} = useArtworkDetailContext();
 
   return (
@@ -16,6 +16,7 @@ export const DetailImage = () => {
           image: styles.image,
         }}
       />
+      {children}
     </View>
   );
 };

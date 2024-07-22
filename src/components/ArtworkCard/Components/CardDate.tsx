@@ -2,18 +2,14 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {useArtworkCardContext} from '../context/ArtworkCardProvider';
 
-export const CardDescription = () => {
+export const CardDate = () => {
   const {artwork} = useArtworkCardContext();
-  return (
-    <Text style={styles.description}>
-      {artwork.short_description || artwork.artist_display}
-    </Text>
-  );
+  return <Text style={styles.date}>({artwork.date_display})</Text>;
 };
 const styles = StyleSheet.create({
-  description: {
+  date: {
+    fontSize: 12,
     color: 'black',
-    fontSize: 14,
-    marginTop: 8,
+    marginTop: 4,
   },
 });

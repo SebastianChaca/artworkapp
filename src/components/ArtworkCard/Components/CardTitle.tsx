@@ -6,28 +6,23 @@ export const CardTitle = () => {
   const {artwork} = useArtworkCardContext();
   //TODO:agregar anio
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{artwork.title}</Text>
-      <Text style={styles.date}>({artwork.date_display})</Text>
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.title}>{artwork.title}</Text>
+      </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
   },
-  date: {
-    fontSize: 10,
-    color: 'black',
-    marginBottom: 5,
-    marginLeft: 4,
-  },
+
   container: {
+    flexWrap: 'wrap',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    flexWrap: 'wrap',
   },
 });

@@ -4,11 +4,13 @@ import {ArtworkCardProvider} from './context/ArtworkCardProvider';
 import {CardContainer} from './Components/CardContainer';
 import {
   CardAnimation,
+  CardDate,
   CardDescription,
+  CardFavoriteIcon,
   CardImage,
   CardTitle,
 } from './Components';
-import {View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 export const ArtworkCard = ({
   artwork,
@@ -22,8 +24,12 @@ export const ArtworkCard = ({
       <CardAnimation index={index}>
         <CardContainer>
           <CardImage />
-          <View style={{marginLeft: 10, flexShrink: 1}}>
-            <CardTitle />
+          <View style={styles.summary}>
+            <View style={styles.titleAndIcon}>
+              <CardTitle />
+              <CardFavoriteIcon />
+            </View>
+            <CardDate />
             <CardDescription />
           </View>
         </CardContainer>
@@ -31,3 +37,14 @@ export const ArtworkCard = ({
     </ArtworkCardProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  titleAndIcon: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    alignItems: 'center',
+  },
+  summary: {marginLeft: 10, flexShrink: 1},
+});

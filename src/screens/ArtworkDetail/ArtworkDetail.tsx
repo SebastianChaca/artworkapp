@@ -8,6 +8,7 @@ import {
   DetailImage,
   DetailsDescription,
   DetailsSummary,
+  DetailFavorite,
 } from '../../components/ArtworkDetails';
 import {DetailRouteProps} from '../../routes/types/routeTypes';
 
@@ -19,7 +20,10 @@ export const ArtworkDetail = () => {
     <ScrollView>
       <ArtworkDetailProvider artwork={artwork}>
         <View style={styles.container}>
-          <DetailImage />
+          <DetailImage>
+            <DetailFavorite />
+          </DetailImage>
+
           <DetailDimensions />
           <DetailsSummary />
           <DetailsDescription />
