@@ -22,6 +22,30 @@ export const getArtworkList = async ({pageParam = 1}): Promise<ArtworkList> => {
     return Promise.reject(error);
   }
 };
+export const getArtworkByIds2 = async ({
+  pageParams,
+  ids,
+}: {
+  pageParams: number;
+  ids: string[];
+}): Promise<Artwork[]> => {
+  console.log(pageParams);
+  try {
+    // if (ids.length === 0) {
+    //   return [];
+    // }
+    const response: AxiosResponse = await artworksBase.get('/artworks', {
+      params: {
+        ids: ids.slice(pageParams, pageParams + 2),
+      },
+    });
+    const responseData: ApiResponse = response.data;
+
+    return serializeArtworks(responseData);
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
 
 export const getArtworkByIds = async (ids: string[]): Promise<Artwork[]> => {
   try {

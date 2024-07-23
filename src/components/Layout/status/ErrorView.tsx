@@ -10,6 +10,6 @@ export const ErrorView = () => {
 };
 const styles = StyleSheet.create({
   error: {
-    color: 'white',
+    color: 'black',
   },
 });

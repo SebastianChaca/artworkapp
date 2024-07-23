@@ -17,7 +17,7 @@ const FavoritesContextComp = createContext<FavoritesContext>(
 );
 export const FavoritesProvider = ({children}: PropsWithChildren) => {
   const [artworkIds, setArtworkIds] = useState<string[]>([]);
-  console.log(artworkIds);
+
   useEffect(() => {
     const fetchStoredIDs = async () => {
       setArtworkIds(await getStoredIds());
