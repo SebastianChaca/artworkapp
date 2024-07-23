@@ -1,6 +1,5 @@
 import React from 'react';
 import {FavoriteIcon} from '../../Layout/Icons/Favorite/FavoriteIcon';
-
 import {useArtworkCardContext} from '../context/ArtworkCardProvider';
 import {useSetFavorite} from '../../../hooks/useSetFavorite';
 

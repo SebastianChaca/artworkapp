@@ -31,5 +31,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: 130,
     height: 130,
+    flex: 1,
   },
 });

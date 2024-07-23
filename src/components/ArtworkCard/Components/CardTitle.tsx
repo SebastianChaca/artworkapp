@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     display: 'flex',
     flexDirection: 'row',
-    width: '95%',
+    paddingRight: 15,
   },
 });

@@ -25,13 +25,11 @@ export const ArtworkCard = ({
         <CardContainer>
           <CardImage />
           <View style={styles.summary}>
-            <View style={styles.titleAndIcon}>
-              <CardTitle />
-              <CardFavoriteIcon />
-            </View>
+            <CardTitle />
             <CardDate />
             <CardDescription />
           </View>
+          <CardFavoriteIcon />
         </CardContainer>
       </CardAnimation>
     </ArtworkCardProvider>
@@ -46,5 +44,5 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
   },
-  summary: {marginLeft: 10, flexShrink: 1},
+  summary: {marginLeft: 10, flexShrink: 1, flex: 2},
 });
