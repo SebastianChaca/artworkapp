@@ -7,6 +7,7 @@ import {useSetFavorite} from '../../hooks/useSetFavorite';
 export const DetailFavorite = () => {
   const {artwork} = useArtworkDetailContext();
   const {onPressFavorite, isFavorite} = useSetFavorite(artwork);
+
   return (
     <View style={styles.container}>
       <FavoriteIcon

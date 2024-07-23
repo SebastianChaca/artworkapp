@@ -8,7 +8,9 @@ export const CardTitle = () => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.title}>{artwork.title}</Text>
+        <Text style={styles.title} numberOfLines={2}>
+          {artwork.title}
+        </Text>
       </View>
     </View>
   );
@@ -24,5 +26,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     display: 'flex',
     flexDirection: 'row',
+    width: '95%',
   },
 });

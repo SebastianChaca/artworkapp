@@ -10,6 +10,7 @@ import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {NavigationContainer} from '@react-navigation/native';
 import Main from './src/Main';
+import {FavoritesProvider} from './src/context/FavoritesProvider';
 
 function App(): React.JSX.Element {
   const queryClient = new QueryClient();
@@ -18,7 +19,9 @@ function App(): React.JSX.Element {
       <QueryClientProvider client={queryClient}>
         <SafeAreaProvider>
           <SafeAreaView style={{height: '100%'}}>
-            <Main />
+            <FavoritesProvider>
+              <Main />
+            </FavoritesProvider>
           </SafeAreaView>
         </SafeAreaProvider>
       </QueryClientProvider>

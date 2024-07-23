@@ -5,7 +5,7 @@ import {useArtworkCardContext} from '../context/ArtworkCardProvider';
 export const CardDescription = () => {
   const {artwork} = useArtworkCardContext();
   return (
-    <Text style={styles.description}>
+    <Text style={styles.description} numberOfLines={5}>
       {artwork.short_description || artwork.artist_display}
     </Text>
   );

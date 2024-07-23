@@ -12,6 +12,7 @@ export const CardFavoriteIcon = () => {
     <FavoriteIcon
       name={isFavorite ? 'heart' : 'heart-o'}
       onPress={onPressFavorite}
+      size={20}
     />
   );
 };

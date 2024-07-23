@@ -23,7 +23,14 @@ export const addIdToStorage = async (id: string): Promise<void> => {
     console.error('Failed to add ID to storage', e);
   }
 };
-
+export const saveIdsToStorage = async (ids: string[]): Promise<void> => {
+  try {
+    const jsonValue = JSON.stringify(ids);
+    await AsyncStorage.setItem(IDS_STORAGE_KEY, jsonValue);
+  } catch (e) {
+    console.error('Failed to add ID to storage', e);
+  }
+};
 export const removeIdFromStorage = async (id: string): Promise<void> => {
   try {
     const storedIds = await getStoredIds();

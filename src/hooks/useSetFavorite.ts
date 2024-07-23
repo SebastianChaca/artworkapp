@@ -1,29 +1,24 @@
 import {useState, useEffect} from 'react';
 import {Artwork} from '../api/types/ui';
-import {
-  addIdToStorage,
-  getStoredIds,
-  removeIdFromStorage,
-} from '../utils/storeData';
+import {useFavoritesContext} from '../context/FavoritesProvider';
 
 export const useSetFavorite = (artwork: Artwork) => {
+  const {setArtworkIds, artworkIds} = useFavoritesContext();
   const [isFavorite, setFavorite] = useState(false);
 
   useEffect(() => {
-    const fetchStoredIds = async () => {
-      const storedIds = await getStoredIds();
-      const find = storedIds.find(store => store === artwork.id.toString());
-      setFavorite(!!find);
-    };
-    fetchStoredIds();
-  }, [artwork.id]);
-  const onPressFavorite = async () => {
+    const findId = artworkIds.find(store => store === artwork.id.toString());
+    setFavorite(!!findId);
+  }, [artwork.id, artworkIds]);
+
+  const onPressFavorite = () => {
     if (isFavorite) {
-      await removeIdFromStorage(artwork.id.toString());
-      setFavorite(false);
+      const filterId = artworkIds.filter(
+        item => item !== artwork.id.toString(),
+      );
+      setArtworkIds(filterId);
     } else {
-      await addIdToStorage(artwork.id.toString());
-      setFavorite(true);
+      setArtworkIds(prev => [...prev, artwork.id.toString()]);
     }
   };
 
