@@ -9,7 +9,7 @@ import {useFocusEffect} from '@react-navigation/native';
 
 export const Favorites = () => {
   const {artworkIds} = useFavoritesContext();
-  const {data, isLoading, refetch, error} = useQuery({
+  const {data, isLoading, refetch, error, isFetching} = useQuery({
     queryKey: ['favorites'],
     queryFn: () => getArtworkByIds(artworkIds),
   });
@@ -20,7 +20,7 @@ export const Favorites = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [artworkIds.length, refetch]),
   );
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <LoadingView />;
   }
   if (error) {
